@@ -1,0 +1,41 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with`a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{enumitem}
+
+
+
+\title{Problem Set 4}
+\author{Leah Pomerantz}
+
+\begin{document}
+\maketitle
+
+
+\section{Data Sources}
+
+I think I'd be interested in scraping data from Twitter. I really enjoyed the Twitter scraping done in Dr. Wang's class, and it played nicely with R. I would be interested in looking at tweets using the hashtag "antisemitism." I think there are a lot of other topics I would be interested in, as the general concept of using Twitter data and text analysis fascinates me.
+
+\section{Questions from Problem 6}
+
+\begin{enumerate}[label=(\alph*)]
+  \item 5.d \\
+  mydf\$dates is a "character" type
+  \item 6.7 \\
+  "class(df1)" gives "tbl\_df"     "tbl" "data.frame" \\
+  "class(df)" gives "tbl\_spark" "tbl\_sql"   "tbl\_lazy"  "tbl"  
+  \item 6.8 \\
+  The names of the columns are different by deliminator. For "df", there is a period between the two words and for "df1", there is a "\_" I think it might be because of how tibbles and Sparks may be read differently by the computer.
+\end{enumerate}
+
+
+\end{document}
