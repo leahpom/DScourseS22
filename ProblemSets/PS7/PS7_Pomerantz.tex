@@ -1,0 +1,89 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+\usepackage{graphicx}
+% Set page size and margins
+% Replace `letterpaper' with`a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\newcolumntype{d}{S[input-symbols = ()]}
+
+
+
+
+\title{Problem Set 6}
+\author{Leah Pomerantz}
+
+\begin{document}
+\maketitle
+
+
+\section{Problem 6}
+
+The table produced by R is shown below. logwages are missing at a rate of 25\%. With such a high percentage missing, I would guess that it's MNAR. 
+
+\begin{table}
+    \centering
+    \begin{tabular}[t]{lrrrrrrr}
+        \toprule
+        & Unique (\#) & Missing (\%) & Mean & SD & Min & Median & Max\\
+        \midrule
+        logwage & 670 & 25 & \num{1.6} & \num{0.4} & \num{0.0} & \num{1.7} & \num{2.3}\\
+        hgc & 16 & 0 & \num{13.1} & \num{2.5} & \num{0.0} & \num{12.0} & \num{18.0}\\
+        tenure & 259 & 0 & \num{6.0} & \num{5.5} & \num{0.0} & \num{3.8} & \num{25.9}\\
+        age & 13 & 0 & \num{39.2} & \num{3.1} & \num{34.0} & \num{39.0} & \num{46.0}\\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Problem 7}
+
+The table produced by R with all the regression results is shown below. The $\hat{\beta_1}$ estimates vary. from 0.050 up to 0.062. What is consistent about all the values is that they have hugely underestimated the value of $\hat{\beta_1}$. However ,out of all the estimations, the listwise deletion and predicted values got the closest. This suggests that the data may be MCAR or MAR. It's a reminder that different methods work better/worse for different data sets, depending on the reason why the data are missing. The last two values for $\hat{\beta_1}$ are close together, suggesting that the methods are both working okay (at least working better than mean imputation), but the predicted values method still does a slightly better job at the prediction.
+
+\begin{table}
+\centering
+\begin{tabular}[t]{lcccc}
+\toprule
+  & Listwise deletion & Mean Imputation & Predicted Values & Mice\\
+\midrule
+(Intercept) & \num{0.534} & \num{0.708} & \num{0.534} & \num{0.638}\\
+ & (\num{0.146}) & (\num{0.116}) & (\num{0.112}) & (\num{0.155})\\
+hgc & \num{0.062} & \num{0.050} & \num{0.062} & \num{0.058}\\
+ & (\num{0.005}) & (\num{0.004}) & (\num{0.004}) & \vphantom{1} (\num{0.005})\\
+collegenot college grad & \num{0.145} & \num{0.169} & \num{0.145} & \num{0.109}\\
+ & (\num{0.034}) & (\num{0.026}) & (\num{0.025}) & (\num{0.029})\\
+tenure & \num{0.050} & \num{0.038} & \num{0.050} & \num{0.043}\\
+ & (\num{0.005}) & (\num{0.004}) & (\num{0.004}) & (\num{0.005})\\
+I(tenure\textasciicircum2) & \num{-0.002} & \num{-0.001} & \num{-0.002} & \num{-0.001}\\
+ & (\num{0.000}) & (\num{0.000}) & (\num{0.000}) & (\num{0.000})\\
+age & \num{0.000} & \num{0.000} & \num{0.000} & \num{0.000}\\
+ & (\num{0.003}) & (\num{0.002}) & (\num{0.002}) & (\num{0.003})\\
+marriedsingle & \num{-0.022} & \num{-0.027} & \num{-0.022} & \num{-0.020}\\
+ & (\num{0.018}) & (\num{0.014}) & (\num{0.013}) & (\num{0.015})\\
+\midrule
+Num.Obs. & \num{1669} & \num{2229} & \num{2229} & \\
+R2 & \num{0.208} & \num{0.146} & \num{0.277} & \\
+R2 Adj. & \num{0.206} & \num{0.144} & \num{0.275} & \\
+AIC & \num{1179.9} & \num{1093.8} & \num{925.5} & \\
+BIC & \num{1223.2} & \num{1139.5} & \num{971.1} & \\
+Log.Lik. & \num{-581.936} & \num{-538.912} & \num{-454.737} & \\
+F & \num{72.917} & \num{63.461} & \num{141.686} & \\
+RMSE & \num{0.34} & \num{0.31} & \num{0.30} & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Problem 8}
+For my project, I plan on using data from my MA thesis. Right now, I'm thinking about looking at how having a parent's education level affects a child's education level. For example, I would expect a high school graduate mother to have a negative affect on probability of going to college, and I would expect the difference between some college and college graduate to be smaller. This prediction comes from my own experience working in admissions and recruitment. There's a steep knowledge gap in how to get a child into college, from things as simple as taking the SATs and PSATs, to taking APs, Honors classes, etc. I think having some college means that the parent will know more about how to get those things accomplished, even though they don't have a degree. That said, I only have data I can match for mothers, not fathers, so that would be a huge flaw with the model.
+
+I think I would use an ordered logistic regression for this. I have an ordered categorical variable as my dependent variable. I've never done this type of analysis, though, so I would need to read up on it some more.
+
+
+\end{document}
