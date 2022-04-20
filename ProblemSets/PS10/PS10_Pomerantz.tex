@@ -1,0 +1,48 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+\usepackage{graphicx}
+% Set page size and margins
+% Replace `letterpaper' with`a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage[T1]{fontenc}
+\usepackage{tgbonum}
+\newcolumntype{d}{S[input-symbols = ()]}
+
+
+
+
+\title{Problem Set 9}
+\author{Leah Pomerantz}
+
+\begin{document}
+\maketitle
+
+\section{Problem 9}
+
+The estimates are all similar to one another and seem to be doing relatively well.
+
+\begin{table}
+\centering
+\begin{tabular}[t]{llllllll}
+\toprule
+penalty & .estimate & alg & .config & hidden\_units & neighbors & cost & rbf\_sigma\\
+\midrule
+0.00 & 0.85 & logit &  &  &  &  & \\
+0.00 &  &  & Preprocessor1\_Model01 &  &  &  & \\
+1.00 & 0.85 & nnet &  & 10.00 &  &  & \\
+ & 0.84 & knn &  &  & 30.00 &  & \\
+ & 0.86 & svm &  &  &  & 2.00 & 0.25\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}
