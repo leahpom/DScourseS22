@@ -1,0 +1,99 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+\usepackage{graphicx}
+% Set page size and margins
+% Replace `letterpaper' with`a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\newcolumntype{d}{S[input-symbols = ()]}
+
+
+
+
+\title{Problem Set 8}
+\author{Leah Pomerantz}
+
+\begin{document}
+\maketitle
+
+
+\section{Problem 5}
+
+The true values of $\beta$ are: $$\beta = \begin{bmatrix}  1.5 & -1 & -0.25 & 0.75 & 3.5 & -2 & 0.5 & 1 & 1.25 & 2 \end{bmatrix}'$$
+The estimated values are: $$\hat{\beta} = \begin{bmatrix} 1.4990 & -0.9978 & -0.2493 & 0.7486 & 3.5009 & -1.9997 & 0.5006 & 0.9994 & 1.2514 & 1.9997 \end{bmatrix}$$
+rounded to four decimal places. The estimates re all very close to their corresponding values. They're all less than $0.01$ away from the true value.
+
+\section{Problem 7}
+
+The results from the three methods (gradient descent, L-BFGS, and Nelder-Mead) are very similar as shown below (rounded to four decimal places:
+$$ \hat{\beta}_{GD} = 
+\begin{bmatrix}
+    1.5003 & -0.9978 & -0.2493  & 0.7486  & 3.5009 & -1.9997  & 0.5006  & 0.9994  & 1.2514  & 1.9997
+\end{bmatrix}
+$$
+$$ \hat{\beta}_{L-BFGS} = 
+\begin{bmatrix}
+    1.5003 & -0.9978 & -0.2493 &  0.7486  & 3.5009 & -1.9997  & 0.5006 &  0.9994  & 1.2514  & 1.9997
+\end{bmatrix}
+$$
+$$ \hat{\beta}_{NM} = 
+\begin{bmatrix}
+    1.5003 & -0.9978 & -0.2496  & 0.7491  & 3.5013 & -1.9997  & 0.5006  & 0.9992  & 1.2516  & 1.9996
+\end{bmatrix}
+$$
+
+
+\section{Problem 9}
+
+The model summary of the basic lm regression method are below:
+
+They are incredibly close to the "true" values that we set, showing that we have a good estimation here.
+
+\begin{table}
+\centering
+\begin{tabular}[t]{lc}
+\toprule
+  & Model 1\\
+\midrule
+X1 & \num{1.500}\\
+ & \vphantom{9} (\num{0.001})\\
+X2 & \num{-0.998}\\
+ & \vphantom{8} (\num{0.001})\\
+X3 & \num{-0.249}\\
+ & \vphantom{7} (\num{0.001})\\
+X4 & \num{0.749}\\
+ & \vphantom{6} (\num{0.001})\\
+X5 & \num{3.501}\\
+ & \vphantom{5} (\num{0.001})\\
+X6 & \num{-2.000}\\
+ & \vphantom{4} (\num{0.001})\\
+X7 & \num{0.501}\\
+ & \vphantom{3} (\num{0.001})\\
+X8 & \num{0.999}\\
+ & \vphantom{2} (\num{0.001})\\
+X9 & \num{1.251}\\
+ & \vphantom{1} (\num{0.001})\\
+X10 & \num{2.000}\\
+ & (\num{0.001})\\
+\midrule
+Num.Obs. & \num{100000}\\
+R2 & \num{0.998}\\
+R2 Adj. & \num{0.998}\\
+AIC & \num{6363.8}\\
+BIC & \num{6468.4}\\
+Log.Lik. & \num{-3170.897}\\
+F & \num{4322726.616}\\
+RMSE & \num{0.25}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}

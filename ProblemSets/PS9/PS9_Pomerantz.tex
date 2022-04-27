@@ -1,0 +1,60 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+\usepackage{graphicx}
+% Set page size and margins
+% Replace `letterpaper' with`a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage[T1]{fontenc}
+\usepackage{tgbonum}
+\newcolumntype{d}{S[input-symbols = ()]}
+
+
+
+
+\title{Problem Set 9}
+\author{Leah Pomerantz}
+
+\begin{document}
+\maketitle
+
+\section{Problem 7}
+
+Using the commands
+{\fontfamily{qcr}\selectfont
+dim(housing)
+}and 
+{\fontfamily{qcr}\selectfont
+dim(housing\_train)
+},
+I found that they had the same number of columns (14), but that 
+{\fontfamily{qcr}\selectfont
+housing\_train
+} had fewer rows (404 instead of 506, as in the original data).
+
+\section{Problem 8}
+
+Optimal Lambda: Our optimal $\lambda$ is 0.00139
+
+In-sample RMSE: Our in-sample RMSE is 0.0682
+
+Out-of-sample RMSE: Our out-of-sample RMSE is 0.188
+
+\section{Problem 9}
+Optimal Lambda: 0.0373
+Out-of-sample RMSE: 0.185
+
+\section{Problem 10}
+
+You wouldn't be able to do simple linear regression with more columns than rows, it would cause too many problems with multicolinearity.
+Unlike the unbiased OLS, ridge and lasso models favor a lower variance in return for allowing some bias.
+
+\end{document}
