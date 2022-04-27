@@ -1,0 +1,76 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+\usepackage{graphicx}
+% Set page size and margins
+% Replace `letterpaper' with`a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage[T1]{fontenc}
+\usepackage{tgbonum}
+\newcolumntype{d}{S[input-symbols = ()]}
+
+
+
+
+\title{Final Project Draft}
+\author{Leah Pomerantz}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+There's a lot of factors that can affect the decision to go to college. I think the enrollment decision is going to be affected by the parental education level. 
+
+\section{Literature Review}
+
+I have the following sources for my literature review:
+
+\cite{pastor21}
+\cite{cheng17}
+\cite{fol10}
+\cite{Gong19}
+\cite{Kodde88}
+\cite{lemke03}
+
+
+\section{Data}
+
+I'm using data from the NLSY79 and their kids. There are some problems with it:
+\begin{itemize}
+    \item No good income in 1987, unclear why (they began changing things then, but it’s categorical that year and not categorical any other year)
+    \item We simply have to get rid of the 3046 people that never recorded their education level. The child data wasn't recorded as neatly or thoroughly, so there is not one variable that plays nicely with education level. I had to loop through about 8 different variables and there's still several missing observations.
+    \item There's a lot of missing data for income and some complicated looping going on with filling thigns in. I'm going to have to do some averaging with some missing values and it's going to be a little ugly, but this is one of the unfortunate facets of using the NLSY79.
+
+\end{itemize}
+
+\section{Empirical Methods}
+
+\begin{itemize}
+    \item Variable of Interest: Child’s decision to enroll in college or not
+    \item Dependent Variable: Mother’s education level
+    \item Regressors: Income, race, ability (use the intelligence test scores), 
+\end{itemize}
+
+Since I changed my model from my original proposal to have my dependent variable, I can change my original plan. I'm going to run both a linear probability model and a logit model, which allows for a neat compare/contrast situation.
+
+\section{Research Findings}
+
+Tragically, do not have any yet. But I do have hot water. You win some, you lose some.
+
+\section{Conclusion}
+
+I will fill in this section when my paper is complete enough for a compare/contrast sitaution.
+
+\bibliographystyle{unsrt}
+\bibliography{references} % see references.bib for bibliography management
+
+\end{document}
